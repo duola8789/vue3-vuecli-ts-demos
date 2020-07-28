@@ -48,7 +48,7 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #808080;
   display: flex;
 
@@ -60,6 +60,15 @@ body {
 
   .main {
     flex: 1;
+    padding: 30px;
+
+    .page-title {
+      text-align: center;
+    }
+
+    .page-content {
+      margin-top: 20px;
+    }
   }
 }
 </style>
