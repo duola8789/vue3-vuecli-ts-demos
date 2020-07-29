@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <aside class="aside">
       <common-menu />
     </aside>
@@ -42,7 +42,7 @@ body {
   height: 100%;
 }
 
-#app {
+.app {
   width: 100%;
   height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -61,14 +61,19 @@ body {
   .main {
     flex: 1;
     padding: 30px;
+  }
 
-    .page-title {
-      text-align: center;
-    }
+  .page-title {
+    text-align: center;
+  }
 
-    .page-content {
-      margin-top: 20px;
-    }
+  .page-content {
+    margin-top: 20px;
+  }
+
+  .page-content-item {
+    display: flex;
+    margin: 20px 0;
   }
 }
 </style>

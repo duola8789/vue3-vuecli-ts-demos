@@ -2,21 +2,25 @@
   <div class="base-knowledge-container" ref="container">
     <h1 class="page-title">基础知识</h1>
     <div class="page-content">
-      <div class="item1">
+      <div class="page-content-item">
         <p :class="countClass">Now the Count is {{ state.count }}</p>
         <button @click="changeCount(true)" class="count-btn">+</button>
         <button @click="changeCount(false)" class="count-btn">-</button>
       </div>
-      <div class="item1">
+      <div class="page-content-item">
         <p>Now the Doubled Computed Number is {{ double }}</p>
       </div>
-      <div class="item1">
+      <div class="page-content-item">
         <button @click="goHome" class="route-btn">Go Home By Router</button>
       </div>
-      <div class="item1">
+      <div class="page-content-item">
         <p>Now the Count From Store is {{ storeState.count }}</p>
         <button @click="changeStoreCount(true)" class="count-btn">+</button>
         <button @click="changeStoreCount(false)" class="count-btn">-</button>
+      </div>
+      <div class="page-content-item">
+        <p>There is an Array： {{ state.arr }}</p>
+        <button @click="changeArray" class="count-btn">Change Array By Index</button>
       </div>
     </div>
   </div>
@@ -28,12 +32,14 @@ import {useRouter} from 'vue-router';
 import {useStore} from 'vuex';
 
 export default {
+  name: 'BaseKnowledge',
   setup() {
     const router = useRouter();
     const store = useStore();
 
     const state = reactive({
-      count: 0
+      count: 0,
+      arr: [1, 2, 3]
     });
 
     const storeState = store.state;
@@ -52,8 +58,11 @@ export default {
 
     watch(
       () => state.count,
-      (value) => {
+      (value, b, onInvalidate) => {
         countClass.value = value % 2 ? 'even' : 'odd';
+        onInvalidate(() => {
+          console.log(countClass.value, 'go to be changed');
+        });
       }
     );
 
@@ -64,9 +73,17 @@ export default {
       }
     });
 
-    watchEffect(() => {
-      console.log('watchEffect', state.count);
-    });
+    watchEffect(
+      () => {
+        console.log('watchEffect', state.count);
+      },
+      {
+        flush: 'pre',
+        onTrigger(e) {
+          debugger;
+        }
+      }
+    );
 
     const container = ref(null);
 
@@ -77,17 +94,18 @@ export default {
       console.log('dom', container.value);
     });
 
-    return {state, double, countClass, container, storeState, changeCount, goHome, changeStoreCount};
+    const changeArray = () => {
+      state.arr[0] = 100;
+    };
+
+    return {state, double, countClass, container, storeState, changeCount, goHome, changeStoreCount, changeArray};
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .base-knowledge-container {
-  .item1 {
-    display: flex;
-    margin: 20px 0;
-
+  .page-content-item {
     .count-btn {
       margin: 0 5px;
       background: none;
