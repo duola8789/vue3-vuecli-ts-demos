@@ -1,5 +1,5 @@
 <template>
-  <div class="base-knowledge-container" ref="container">
+  <div class="base-knowledge-container" ref="ele">
     <h1 class="page-title">基础知识</h1>
     <div class="page-content">
       <div class="page-content-item">
@@ -8,7 +8,12 @@
         <button @click="changeCount(false)" class="count-btn">-</button>
       </div>
       <div class="page-content-item">
-        <p>Now the Doubled Computed Number is {{ double }}</p>
+        <p>Now the Doubled Computed Count is {{ double }}</p>
+      </div>
+      <div class="page-content-item">
+        <p>Now the Count from toRef is {{ toRefCount }}，and it will keep same value with Count</p>
+        <button @click="toRefCount++" class="count-btn">+ ToRefCount</button>
+        <button @click="toRefCount--" class="count-btn">- ToRefCount</button>
       </div>
       <div class="page-content-item">
         <button @click="goHome" class="route-btn">Go Home By Router</button>
@@ -27,7 +32,7 @@
 </template>
 
 <script>
-import {reactive, ref, computed, watch, watchEffect, onMounted} from 'vue';
+import {reactive, ref, computed, watch, watchEffect, toRef, onMounted} from 'vue';
 import {useRouter} from 'vue-router';
 import {useStore} from 'vuex';
 
@@ -41,6 +46,8 @@ export default {
       count: 0,
       arr: [1, 2, 3]
     });
+
+    const toRefCount = toRef(state, 'count');
 
     const storeState = store.state;
 
@@ -80,25 +87,25 @@ export default {
       {
         flush: 'pre',
         onTrigger(e) {
-          debugger;
+          console.log('onTrigger', e);
         }
       }
     );
 
-    const container = ref(null);
+    const ele = ref(null);
 
     const goHome = () => router.push('/');
 
     onMounted(() => {
       console.log('mounted');
-      console.log('dom', container.value);
+      console.log('dom', ele.value);
     });
 
     const changeArray = () => {
       state.arr[0] = 100;
     };
 
-    return {state, double, countClass, container, storeState, changeCount, goHome, changeStoreCount, changeArray};
+    return {state, double, countClass, ele, storeState, toRefCount, changeCount, goHome, changeStoreCount, changeArray};
   }
 };
 </script>

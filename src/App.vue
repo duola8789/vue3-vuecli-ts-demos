@@ -36,6 +36,14 @@ a {
   color: #808080;
 }
 
+input {
+  background: none;
+  border: 1px solid #999;
+  padding: 5px;
+  border-radius: 4px;
+  color: #808080;
+}
+
 html,
 body {
   width: 100%;

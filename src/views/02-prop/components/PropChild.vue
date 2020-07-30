@@ -2,8 +2,10 @@
   <div class="prop-child-container">
     <h2>子组件</h2>
     <div class="page-content">
-      <div class="page-content-item">Prop from Parent is: {{ msg }}</div>
-      <button @click="changeProp" class="btn">Change Prop By Emit Event</button>
+      <div class="page-content-item">
+        <p class="label">Prop msg from Parent is: {{ msg }}</p>
+        <button @click="changeProp" class="btn">Change Prop msg By Emit Event +2</button>
+      </div>
     </div>
   </div>
 </template>
@@ -15,11 +17,10 @@ export default {
     msg: Number
   },
   setup(props, {emit}) {
-    console.log(props.msg);
-
     const changeProp = () => {
       emit('update-count', 2);
     };
+
     return {changeProp};
   }
 };
@@ -33,8 +34,12 @@ export default {
   .btn {
     background: none;
     border: 1px solid #333;
-    padding: 5px 10px;
+    padding: 2px 10px;
     cursor: pointer;
+  }
+
+  .label {
+    padding: 2px 10px 2px 0;
   }
 }
 </style>
