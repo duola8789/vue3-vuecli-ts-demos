@@ -1,0 +1,123 @@
+/**
+ * 可复用样式类, 在 SCSS 文件中可直接使用，例如 @include absCenter()
+ */
+// 绝对定位居中
+@mixin absCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 单行文字剪切
+@mixin text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 多行文字剪切
+@mixin text-overflow-multiple($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 按钮交互优化样式
+@mixin nice-btn {
+  transition: all 0.2s linear;
+  cursor: pointer;
+  user-select: none;
+}
+
+@mixin page-base-style {
+  .page-title {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .page-content {
+    margin-top: 20px;
+  }
+
+  .page-content-item {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-label {
+      margin-right: 10px;
+    }
+  }
+
+  .page-content-child,
+  &.page-content-child {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 8px;
+
+    .page-title {
+      text-align: left;
+      font-size: 24px;
+    }
+
+    .page-content {
+      margin-top: 12px;
+    }
+
+    .page-content-item {
+      display: flex;
+      margin: 12px 0;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .item-label {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@mixin btn-base-style {
+  @include nice-btn();
+
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  padding: 6px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+
+  &:nth-child(n + 1) {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+  }
+
+  &:active {
+    color: #3a8ee6;
+    border-color: #3a8ee6;
+    outline: none;
+  }
+
+  &:disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #fff;
+    border-color: #ebeef5;
+  }
+}

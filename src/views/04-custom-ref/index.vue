@@ -2,12 +2,13 @@
   <div class="custom-ref-container">
     <h1 class="page-title">customRef 实现输入防抖</h1>
     <div class="page-content">
+      <label class="page-content-item">
+        <span class="item-label">Input your message:</span>
+        <input :value="value" @input="onInput" />
+      </label>
       <div class="page-content-item">
-        <label class="input-container">
-          Input your message:
-          <input :value="value" @input="onInput" />
-        </label>
-        <p>The Message you input is: {{ isInputting ? '...' : result }}</p>
+        <span class="item-label">The Message you input is:</span>
+        <span>{{ isInputting ? '...' : result }}</span>
       </div>
     </div>
   </div>
@@ -36,17 +37,6 @@ export default {
 
 <style lang="scss" scoped>
 .custom-ref-container {
-  .page-content-item {
-    display: block;
-
-    .input-container {
-      display: block;
-      margin-bottom: 20px;
-
-      input {
-        margin-left: 20px;
-      }
-    }
-  }
+  @include page-base-style();
 }
 </style>

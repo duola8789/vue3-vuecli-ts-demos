@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data() {
     return {
       msg: 'Vue3 Learning Demos'

@@ -112,6 +112,8 @@ export default {
 
 <style lang="scss" scoped>
 .base-knowledge-container {
+  @include page-base-style();
+
   .page-content-item {
     .count-btn {
       margin: 0 5px;

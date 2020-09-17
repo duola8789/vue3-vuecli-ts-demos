@@ -2,21 +2,18 @@
   <div class="provide-inject-container">
     <h1 class="page-title">依赖注入</h1>
     <div class="page-content">
-      <div class="page-content-item">
-        <label class="message">
-          The prop transferred to Child is
-          <input :value="message" class="input" @input="changeMessage" />
-        </label>
-
-        <child />
-      </div>
+      <label class="page-content-item">
+        <span class="item-label">The prop transferred to Child is:</span>
+        <input :value="message" @input="changeMessage" />
+      </label>
+      <child />
     </div>
   </div>
 </template>
 
 <script>
 import {ref, provide} from 'vue';
-import Child from './components/Child';
+import Child from './components/child';
 import provideSymbols from '@/views/03-provide-inject/provideSymbols';
 
 export default {
@@ -35,17 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .provide-inject-container {
-  .page-content-item {
-    display: block;
-
-    .message {
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .input {
-      margin-left: 10px;
-    }
-  }
+  @include page-base-style();
 }
 </style>

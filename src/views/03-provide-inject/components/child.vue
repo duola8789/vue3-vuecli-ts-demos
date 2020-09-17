@@ -1,8 +1,8 @@
 <template>
-  <div class="prop-child-container">
-    <h2>子组件</h2>
+  <div class="page-content-child">
+    <h2 class="page-title">子组件</h2>
     <div class="page-content">
-      <p>Value from Parent By Inject is: {{ childValue }}</p>
+      <div class="page-content-item">Value from Parent By Inject is: {{ childValue }}</div>
     </div>
   </div>
 </template>
@@ -22,19 +22,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.prop-child-container {
-  padding: 20px;
-  border: 1px solid grey;
+.page-content-child {
+  @include page-base-style();
 
   .btn {
-    background: none;
-    border: 1px solid #333;
-    padding: 5px 10px;
-    cursor: pointer;
-
-    .input {
-      margin-left: 10px;
-    }
+    @include btn-base-style();
   }
 }
 </style>

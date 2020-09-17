@@ -1,6 +1,6 @@
 <template>
-  <div class="prop-child-container">
-    <h2>子组件</h2>
+  <div class="page-content-child">
+    <h2 class="page-title">子组件</h2>
     <div class="page-content">
       <div class="page-content-item">
         <p class="label">Prop msg from Parent is: {{ msg }}</p>
@@ -27,15 +27,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.prop-child-container {
-  padding: 20px;
-  border: 1px solid grey;
+.page-content-child {
+  @include page-base-style();
 
   .btn {
-    background: none;
-    border: 1px solid #333;
-    padding: 2px 10px;
-    cursor: pointer;
+    @include btn-base-style();
   }
 
   .label {

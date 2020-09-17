@@ -42,6 +42,10 @@ input {
   padding: 5px;
   border-radius: 4px;
   color: #808080;
+
+  &[type='checkbox'] {
+    appearance: auto;
+  }
 }
 
 html,
@@ -69,19 +73,6 @@ body {
   .main {
     flex: 1;
     padding: 30px;
-  }
-
-  .page-title {
-    text-align: center;
-  }
-
-  .page-content {
-    margin-top: 20px;
-  }
-
-  .page-content-item {
-    display: flex;
-    margin: 20px 0;
   }
 }
 </style>
