@@ -46,6 +46,11 @@ input {
   &[type='checkbox'] {
     appearance: auto;
   }
+
+  &:disabled {
+    background: #e4e8f0;
+    cursor: not-allowed;
+  }
 }
 
 html,

@@ -29,12 +29,12 @@ export default {
     return {count, updateCount};
   },
 
-  onRenderTracked(e) {
+  onRenderTracked() {
     debugger;
     // 检查哪个依赖性导致组件重新渲染
   },
 
-  onRenderTriggered(e) {
+  onRenderTriggered() {
     debugger;
     // 检查哪个依赖性导致组件重新渲染
   }

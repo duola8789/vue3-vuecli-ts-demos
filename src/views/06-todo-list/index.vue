@@ -46,7 +46,7 @@
 import {ref, computed, reactive} from 'vue';
 
 export default {
-  name: 'MousePosition',
+  name: 'TodoList',
   setup() {
     let uuid = 0;
     const newItem = ref('');

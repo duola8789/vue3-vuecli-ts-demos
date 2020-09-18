@@ -1,4 +1,5 @@
 import {customRef} from 'vue';
+import mitt from 'mitt';
 
 export const useDebouncedRef = (value, isInputting, delay = 200) => {
   let timer;
@@ -22,3 +23,5 @@ export const useDebouncedRef = (value, isInputting, delay = 200) => {
     };
   });
 };
+
+export const emitter = mitt();
