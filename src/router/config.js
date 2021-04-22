@@ -11,5 +11,6 @@ export default [
   {path: '/custom-ref', label: '04 customRef', component: lazyLoadHelper('04-custom-ref/index')},
   {path: '/mouse-position', label: '05 追踪鼠标位置', component: lazyLoadHelper('05-mouse-position/index')},
   {path: '/todo-list', label: '06 Todo List', component: lazyLoadHelper('06-todo-list/index')},
-  {path: '/bor-communication', label: '07 兄弟组件间通信', component: lazyLoadHelper('07-bro-communication/index')}
+  {path: '/bor-communication', label: '07 兄弟组件间通信', component: lazyLoadHelper('07-bro-communication/index')},
+  {path: '/teleport', label: '08 Teleport', component: lazyLoadHelper('08-teleport/index')}
 ];
