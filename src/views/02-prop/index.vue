@@ -13,18 +13,18 @@
   </div>
 </template>
 
-<script>
-import Child from './components/prop-child';
+<script lang="ts">
+import Child from './components/prop-child.vue';
 
-import {ref} from 'vue';
+import {ref, defineComponent} from 'vue';
 
-export default {
+export default defineComponent({
   name: 'Prop',
   components: {Child},
   setup() {
     let count = ref(0);
 
-    const updateCount = (val) => (count.value += val);
+    const updateCount = (val: number) => (count.value += val);
 
     return {count, updateCount};
   },
@@ -38,7 +38,7 @@ export default {
     debugger;
     // 检查哪个依赖性导致组件重新渲染
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

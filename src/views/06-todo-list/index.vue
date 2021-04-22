@@ -42,21 +42,27 @@
   </div>
 </template>
 
-<script>
-import {ref, computed, reactive} from 'vue';
+<script lang="ts">
+import {ref, computed, reactive, defineComponent} from 'vue';
 
-export default {
+interface TypeTodoItem {
+  done: boolean;
+  message: string;
+  id: number;
+}
+
+export default defineComponent({
   name: 'TodoList',
   setup() {
     let uuid = 0;
-    const newItem = ref('');
-    const state = reactive({
+    const newItem = ref<string>('');
+    const state = reactive<{todoList: TypeTodoItem[]}>({
       todoList: []
     });
 
     const doneList = computed(() => state.todoList.filter((v) => !!v.done));
 
-    const onInput = (e) => (newItem.value = e.target.value);
+    const onInput = (e: InputEvent) => (newItem.value = (e.target as HTMLInputElement).value);
     const onAdd = () => {
       if (!newItem.value) {
         alert('请输入内容');
@@ -66,20 +72,20 @@ export default {
       newItem.value = '';
     };
 
-    const onKeyup = (e) => {
+    const onKeyup = (e: KeyboardEvent) => {
       if (e.keyCode === 13) {
         onAdd();
       }
     };
 
-    const onItemChange = (id) => {
+    const onItemChange = (id: number) => {
       const target = state.todoList.find((v) => v.id === id);
       if (target) {
         target.done = !target.done;
       }
     };
 
-    const onDel = (id) => {
+    const onDel = (id: number) => {
       const index = state.todoList.findIndex((v) => v.id === id);
       if (index >= 0) {
         state.todoList.splice(index, 1);
@@ -92,7 +98,7 @@ export default {
 
     return {newItem, onInput, onAdd, state, doneList, onItemChange, onKeyup, onDel, onDelAll};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

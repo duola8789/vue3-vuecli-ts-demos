@@ -15,10 +15,10 @@
   </div>
 </template>
 
-<script>
-import {ref, computed} from 'vue';
+<script lang="ts">
+import {ref, computed, defineComponent} from 'vue';
 
-export default {
+export default defineComponent({
   name: 'Teleport',
   setup() {
     const modalOpen = ref(false);
@@ -31,7 +31,7 @@ export default {
 
     return {modalOpen, btnLabel, toggleModel};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

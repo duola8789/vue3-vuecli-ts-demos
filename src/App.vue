@@ -9,8 +9,8 @@
   </div>
 </template>
 
-<script>
-import CommonMenu from '@/components/menu';
+<script lang="ts">
+import CommonMenu from '@/components/menu.vue';
 
 export default {
   name: 'Menu',

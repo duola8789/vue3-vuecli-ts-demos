@@ -10,22 +10,22 @@
   </div>
 </template>
 
-<script>
-import {ref} from 'vue';
+<script lang="ts">
+import {ref, defineComponent} from 'vue';
 import {emitter} from '@/utils';
 
-export default {
+export default defineComponent({
   name: 'BroChild1',
   setup() {
     const message = ref('');
 
-    const onInput = (e) => {
-      message.value = e.target.value;
+    const onInput = (e: InputEvent) => {
+      message.value = (e.target as HTMLInputElement).value;
       emitter.emit('to-child2', message.value);
     };
     return {message, onInput};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

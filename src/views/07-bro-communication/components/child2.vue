@@ -10,11 +10,11 @@
   </div>
 </template>
 
-<script>
-import {ref} from 'vue';
+<script lang="ts">
+import {ref, defineComponent} from 'vue';
 import {emitter} from '@/utils';
 
-export default {
+export default defineComponent({
   name: 'BroChild2',
   setup() {
     const message = ref('');
@@ -23,7 +23,7 @@ export default {
 
     return {message};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

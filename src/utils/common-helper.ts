@@ -1,8 +1,8 @@
 import {customRef} from 'vue';
 import mitt from 'mitt';
 
-export const useDebouncedRef = (value, isInputting, delay = 200) => {
-  let timer;
+export const useDebouncedRef = (value: any, isInputting: any, delay = 200) => {
+  let timer: number | null = null;
   return customRef((track, trigger) => {
     return {
       get() {
@@ -14,7 +14,7 @@ export const useDebouncedRef = (value, isInputting, delay = 200) => {
           clearTimeout(timer);
         }
         isInputting.value = true;
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
           value = newValue;
           isInputting.value = false;
           trigger();

@@ -11,23 +11,23 @@
   </div>
 </template>
 
-<script>
-import {ref, provide} from 'vue';
-import Child from './components/child';
+<script lang="ts">
+import {ref, provide, defineComponent} from 'vue';
+import Child from './components/child.vue';
 import provideSymbols from '@/views/03-provide-inject/provideSymbols';
 
-export default {
+export default defineComponent({
   name: 'ProvideInject',
   components: {Child},
   setup() {
     const message = ref('Hello From Parent');
     provide(provideSymbols.msg, message);
 
-    const changeMessage = (e) => (message.value = e.target.value);
+    const changeMessage = (e: Event) => (message.value = (e.target as HTMLInputElement).value);
 
     return {message, changeMessage};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

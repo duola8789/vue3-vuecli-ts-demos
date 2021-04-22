@@ -1,29 +1,18 @@
 <template>
-  <div class="home-container">
-    <div>
-      <img src="@/assets/logo.png" alt="logo" />
-      <h1>{{ msg }}</h1>
-    </div>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Home',
-  data() {
-    return {
-      msg: 'Vue3 Learning Demos'
-    };
-  }
-};
-</script>
+<script lang="ts">
+import {defineComponent} from 'vue';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-<style lang="scss" scoped>
-.home-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-</style>
+export default defineComponent({
+  name: 'Home',
+  components: {
+    HelloWorld
+  }
+});
+</script>

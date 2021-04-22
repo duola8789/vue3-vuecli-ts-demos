@@ -10,8 +10,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue';
+
+export default defineComponent({
   name: 'PropChild',
   props: {
     msg: Number
@@ -23,7 +25,7 @@ export default {
 
     return {changeProp};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -10,8 +10,8 @@
   </div>
 </template>
 
-<script>
-import {ref, onMounted, onUnmounted, computed} from 'vue';
+<script lang="ts">
+import {ref, onMounted, onUnmounted, computed, defineComponent} from 'vue';
 
 function useMousePosition() {
   const x = ref(0);
@@ -33,7 +33,7 @@ function useMousePosition() {
   return {x, y};
 }
 
-export default {
+export default defineComponent({
   name: 'MousePosition',
   setup() {
     const {x, y} = useMousePosition();
@@ -42,7 +42,7 @@ export default {
 
     return {pos};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

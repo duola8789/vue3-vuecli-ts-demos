@@ -31,18 +31,18 @@
   </div>
 </template>
 
-<script>
-import {reactive, ref, computed, watch, watchEffect, toRef, onMounted} from 'vue';
+<script lang="ts">
+import {reactive, ref, computed, watch, watchEffect, toRef, onMounted, defineComponent} from 'vue';
 import {useRouter} from 'vue-router';
 import {useStore} from 'vuex';
 
-export default {
+export default defineComponent({
   name: 'BaseKnowledge',
   setup() {
     const router = useRouter();
     const store = useStore();
 
-    const state = reactive({
+    const state = reactive<{count: number; arr: number[]}>({
       count: 0,
       arr: [1, 2, 3]
     });
@@ -55,11 +55,11 @@ export default {
 
     const double = computed(() => state.count * 2);
 
-    const changeCount = (isAdd) => {
+    const changeCount = (isAdd: boolean) => {
       isAdd ? state.count++ : state.count--;
     };
 
-    const changeStoreCount = (isAdd) => {
+    const changeStoreCount = (isAdd: boolean) => {
       store.commit('changeCount', isAdd);
     };
 
@@ -107,7 +107,7 @@ export default {
 
     return {state, double, countClass, ele, storeState, toRefCount, changeCount, goHome, changeStoreCount, changeArray};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

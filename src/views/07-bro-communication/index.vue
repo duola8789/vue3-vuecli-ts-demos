@@ -12,15 +12,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue';
+
 import Child1 from './components/child1.vue';
 import Child2 from './components/child2.vue';
 
-export default {
+export default defineComponent({
   name: 'BroCommunication',
   components: {Child1, Child2},
   setup() {}
-};
+});
 </script>
 
 <style lang="scss" scoped>

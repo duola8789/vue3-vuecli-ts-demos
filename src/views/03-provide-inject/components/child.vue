@@ -7,18 +7,18 @@
   </div>
 </template>
 
-<script>
-import {ref, inject} from 'vue';
+<script lang="ts">
+import {ref, inject, defineComponent} from 'vue';
 import provideSymbols from '@/views/03-provide-inject/provideSymbols';
 
-export default {
+export default defineComponent({
   name: 'Child',
   setup() {
     const childValue = inject(provideSymbols.msg, ref('defaultValue'));
 
     return {childValue};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

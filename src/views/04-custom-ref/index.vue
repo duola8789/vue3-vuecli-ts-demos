@@ -14,11 +14,11 @@
   </div>
 </template>
 
-<script>
-import {ref} from 'vue';
+<script lang="ts">
+import {ref, defineComponent} from 'vue';
 import {useDebouncedRef} from '@/utils';
 
-export default {
+export default defineComponent({
   name: 'CustomRef',
   setup() {
     const isInputting = ref(false);
@@ -32,7 +32,7 @@ export default {
 
     return {value, result, isInputting, onInput};
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>
