@@ -25,7 +25,7 @@ export default defineComponent({
     const value = ref('');
     const result = useDebouncedRef('', isInputting, 500);
 
-    const onInput = (e) => {
+    const onInput = (e: {target: HTMLInputElement}) => {
       value.value = e.target.value;
       result.value = e.target.value;
     };
