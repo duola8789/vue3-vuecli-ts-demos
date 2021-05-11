@@ -6,8 +6,14 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-createApp(App)
+const app = createApp(App);
+
+app
   .use(ElementPlus)
   .use(router)
   .use(store)
   .mount('#app');
+
+app.config.globalProperties.$sayHello = () => {
+  alert('Hello');
+};

@@ -27,6 +27,15 @@
         <p>There is an Array： {{ state.arr }}</p>
         <button @click="changeArray" class="count-btn">Change Array By Index</button>
       </div>
+      <div class="page-content-item">
+        <el-button @click="sayHello">Say Hello From Global Properties</el-button>
+      </div>
+      <div class="page-content-item">
+        <label>
+          Triggered By Enter
+          <input @keyup.enter="onKeyup" />
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -106,6 +115,14 @@ export default defineComponent({
     };
 
     return {state, double, countClass, ele, storeState, toRefCount, changeCount, goHome, changeStoreCount, changeArray};
+  },
+  methods: {
+    sayHello() {
+      console.log(this.$sayHello());
+    },
+    onKeyup() {
+      alert('Enter keyup');
+    }
   }
 });
 </script>
