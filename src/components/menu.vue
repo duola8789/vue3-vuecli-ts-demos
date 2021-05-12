@@ -26,7 +26,7 @@ export default {
 
   .menu-item {
     text-align: left;
-    padding-left: 50px;
+    padding-left: 40px;
     margin-bottom: 15px;
 
     &:last-child {

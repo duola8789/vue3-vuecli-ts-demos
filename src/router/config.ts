@@ -14,5 +14,6 @@ export default [
   {path: '/bor-communication', label: '07 兄弟组件间通信', component: lazyLoadHelper('07-bro-communication/index')},
   {path: '/teleport', label: '08 Teleport', component: lazyLoadHelper('08-teleport/index')},
   {path: '/render', label: '09 Render函数', component: lazyLoadHelper('09-render/index')},
-  {path: '/slot', label: '10 插槽Slot', component: lazyLoadHelper('10-slot/index')}
+  {path: '/slot', label: '10 插槽Slot', component: lazyLoadHelper('10-slot/index')},
+  {path: '/modifiers', label: '11 自定义修饰符', component: lazyLoadHelper('11-model-modifiers/index')}
 ];

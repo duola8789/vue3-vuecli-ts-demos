@@ -70,7 +70,7 @@ body {
   display: flex;
 
   .aside {
-    flex: 0 1 200px;
+    flex: 0 1 220px;
     overflow: auto;
     border-right: 1px solid #333;
   }
