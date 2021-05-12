@@ -1,7 +1,7 @@
 <template>
   <ul class="menu-container">
     <li v-for="(menu, index) in menus" :key="menu.path + index" class="menu-item">
-      <router-link :to="menu.path">{{ menu.label }}</router-link>
+      <router-link :to="menu.path">{{ menu.meta.label }}</router-link>
     </li>
   </ul>
 </template>

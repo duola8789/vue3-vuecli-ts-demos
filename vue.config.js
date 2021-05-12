@@ -11,7 +11,7 @@ const ASSERTS_DIR = 'static';
 module.exports = {
   lintOnSave: isDev ? 'warning' : false,
   assetsDir: isDev ? '' : ASSERTS_DIR,
-  publicPath: './',
+  publicPath: '/',
   devServer: {
     port: 8789,
     disableHostCheck: true

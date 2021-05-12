@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 import Vue from 'vue';
 
 // Vue 原型上添加的东西，需要在此定义
