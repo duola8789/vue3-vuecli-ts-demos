@@ -24,7 +24,8 @@ const routes: RouteRecordRaw[] = [
     path: '/modifiers',
     meta: {label: '11 自定义修饰符'},
     component: lazyLoadHelper('11-model-modifiers/index')
-  }
+  },
+  {path: '/:pathMatch(.*)*', component: lazyLoadHelper('common/not-found')}
 ];
 
 export default routes;
