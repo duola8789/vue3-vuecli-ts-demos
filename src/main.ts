@@ -4,14 +4,14 @@ import 'element-plus/lib/theme-chalk/index.css';
 
 import App from './App.vue';
 import router from './router';
-import store from './store';
+import {store, storeKey} from './store';
 
 const app = createApp(App);
 
 app
   .use(ElementPlus)
   .use(router)
-  .use(store)
+  .use(store, storeKey)
   .mount('#app');
 
 app.config.globalProperties.$sayHello = () => {

@@ -43,13 +43,11 @@
 <script lang="ts">
 import {reactive, ref, computed, watch, watchEffect, toRef, onMounted, defineComponent} from 'vue';
 import {useRouter} from 'vue-router';
-import {useStore} from 'vuex';
 
 export default defineComponent({
   name: 'BaseKnowledge',
   setup() {
     const router = useRouter();
-    const store = useStore();
 
     const state = reactive<{count: number; arr: number[]}>({
       count: 0,
@@ -58,18 +56,12 @@ export default defineComponent({
 
     const toRefCount = toRef(state, 'count');
 
-    const storeState = store.state;
-
     let countClass = ref('odd');
 
     const double = computed(() => state.count * 2);
 
     const changeCount = (isAdd: boolean) => {
       isAdd ? state.count++ : state.count--;
-    };
-
-    const changeStoreCount = (isAdd: boolean) => {
-      store.commit('changeCount', isAdd);
     };
 
     watch(
@@ -114,7 +106,7 @@ export default defineComponent({
       state.arr[0] = 100;
     };
 
-    return {state, double, countClass, ele, storeState, toRefCount, changeCount, goHome, changeStoreCount, changeArray};
+    return {state, double, countClass, ele, toRefCount, changeCount, goHome, changeArray};
   },
   methods: {
     sayHello() {

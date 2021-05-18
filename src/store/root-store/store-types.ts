@@ -1,0 +1,2 @@
+export const CHANGE_COUNT_MUT = 'CHANGE_COUNT_MUT';
+export const CHANGE_COUNT_ACT = 'CHANGE_COUNT_ACT';

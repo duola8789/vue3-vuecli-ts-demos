@@ -25,6 +25,11 @@ const routes: RouteRecordRaw[] = [
     meta: {label: '11 自定义修饰符'},
     component: lazyLoadHelper('11-model-modifiers/index')
   },
+  {
+    path: '/vuex-store',
+    meta: {label: '12 Vuex'},
+    component: lazyLoadHelper('12-vuex/index')
+  },
   {path: '/:pathMatch(.*)*', component: lazyLoadHelper('common/not-found')}
 ];
 

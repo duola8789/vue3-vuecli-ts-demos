@@ -8632,10 +8632,10 @@ vue@^3.0.0-beta.1:
     "@vue/runtime-dom" "3.0.0-rc.4"
     "@vue/shared" "3.0.0-rc.4"
 
-vuex@^4.0.0-alpha.1:
-  version "4.0.0-beta.4"
-  resolved "https://registry.npm.taobao.org/vuex/download/vuex-4.0.0-beta.4.tgz#7b319ead2ef30432b7eaa4e37258ea3c5e44f698"
-  integrity sha1-ezGerS7zBDK36qTjcljqPF5E9pg=
+vuex@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/vuex/-/vuex-4.0.0.tgz#ac877aa76a9c45368c979471e461b520d38e6cf5"
+  integrity sha512-56VPujlHscP5q/e7Jlpqc40sja4vOhC4uJD1llBCWolVI8ND4+VzisDVkUMl+z5y0MpIImW6HjhNc+ZvuizgOw==
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"

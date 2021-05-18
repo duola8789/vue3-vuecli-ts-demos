@@ -24,4 +24,6 @@ export const useDebouncedRef = (value: any, isInputting: any, delay = 200) => {
   });
 };
 
+export const namespaceHelper = (prefix: string) => (name: string) => prefix + '/' + name;
+
 export const emitter = mitt();
