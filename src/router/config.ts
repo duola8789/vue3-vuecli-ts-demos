@@ -30,6 +30,11 @@ const routes: RouteRecordRaw[] = [
     meta: {label: '12 Vuex'},
     component: lazyLoadHelper('12-vuex/index')
   },
+  {
+    path: '/simple-store',
+    meta: {label: '13 Simple Store'},
+    component: lazyLoadHelper('13-simple-store/index')
+  },
   {path: '/:pathMatch(.*)*', component: lazyLoadHelper('common/not-found')}
 ];
 

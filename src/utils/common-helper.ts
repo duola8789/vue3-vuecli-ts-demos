@@ -1,6 +1,11 @@
 import {customRef} from 'vue';
 import mitt from 'mitt';
 
+export const mock = <T>(val: T): Promise<T> =>
+  new Promise((resolve) => {
+    setTimeout(resolve, 1000, val);
+  });
+
 export const useDebouncedRef = (value: any, isInputting: any, delay = 200) => {
   let timer: number | null = null;
   return customRef((track, trigger) => {
